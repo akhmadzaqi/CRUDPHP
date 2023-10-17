@@ -5,48 +5,31 @@
 {% endblock %}
 
 {% block body %}
-<div class="container mx-auto mt-5 bg-dark text-white rounded  p-5">
-    <h1 class="mb-4 text-center">Data</h1>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th class="text-white">ID</th>
-                <th class="text-white">Alamat</th>
-                <th class="text-white">Fakultas</th>
-                <th class="text-white">Nomor HP</th>
-                <th class="text-white">Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in data %}
-            <tr>
-                <td class="text-white">{{ row[0] }}</td>
-                <td class="text-white">{{ row[1] }}</td>
-                <td class="text-white">{{ row[2] }}</td>
-                <td class="text-white">{{ row[3] }}</td>
-                <td>
-                    <a href="{{ url_for('edit', id=row[0]) }}" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="{{ url_for('delete', id=row[0]) }}" class="btn btn-danger btn-sm">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h2 class="mb-3">Tambah Data</h2>
-    <form action="{{ url_for('add') }}" method="post">
-        <div class="form-group">
-            <label for="alamat">Alamat:</label>
-            <input type="text" id="alamat" name="alamat" class="form-control" required>
+<div class="container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 lg:mt-32 mt-10">
+      <div class="m-14 text-center lg:text-left lg:py-20 md:py-0 font-figtree">
+        <h2 class="font-bold text-2xl text-blue-950 pb-1 lg:text-4xl">Akhmad Zaqi Noor.</h2>
+        <h1 class="font-extrabold text-3xl lg:text-5xl lg:pb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#FF35C6] to-[#FF8049]">
+          Front-End Developer & Graphic Designer</h1>
+        <p class="font-semilight pt-2 lg:text-lg"><span class="font-bold">Code & Graphic Designer</span>, it such a happiness for me. so, let me to help you!</p>
+      </div>
+      <div class="grid grid-cols-4 animate-wiggleVertical">
+        <div class="scale-75 lg:-rotate-45 lg:translate-x-8">
+          <a href="https://www.linkedin.com/in/akhmad-zaqi-riyadi-485a59194/"><img class="transition hover:rotate-45" src="/static/images/linkedin.png" alt=""></a>
         </div>
-        <div class="form-group">
-            <label for="fakultas">Fakultas:</label>
-            <input type="text" id="fakultas" name="fakultas" class="form-control" required>
+        <div class="col-span-2 scale-125 ">
+          <img src="/static/images/hero.png" alt="">
         </div>
-        <div class="form-group">
-            <label for="nomer_hp">Nomor HP:</label>
-            <input type="text" id="nomer_hp" name="nomer_hp" class="form-control" required>
+        <div class="scale-75 lg:rotate-45 lg:-translate-x-4">
+          <a href=""><img class="transition hover:-rotate-45" src="/static/images/tik.png" alt=""></a>
         </div>
-        <button type="submit" class="btn btn-primary mt-2">Tambah</button>
-    </form>
-</div>
+        <div class="col-span-2 w-1/2 scale-75 translate-x-6 -translate-y-14 -rotate-45 md:translate-x-14 md:-translate-y-14 lg:translate-x-10">
+          <a href="https://www.instagram.com/zzzz_qqii/"><img class="transition hover:rotate-45" src="/static/images/instagram.png" alt=""></a>
+        </div>
+        <div class="col-span-2 w-1/2 scale-75 translate-x-24 -translate-y-14 md:translate-x-44 lg:translate-x-32 sm:translate-x-56">
+         <a href="https://www.youtube.com/channel/UCAWxTQUGrd1vYZEM-aHABhw"><img class="transition hover:rotate-45 lg:translate-x-8" src="/static/images/youtube.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
